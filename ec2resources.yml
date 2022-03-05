@@ -1,0 +1,19 @@
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: "us-east-1"
+      ImageId: "ami-0c293f3f676ec4f90"
+      InstanceType: "t2.micro"
+      KeyName: "key.pem"
+      SecurityGroups:
+        - !Ref  SshSecurityGroup
+  SshSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+      - CidrIp: 0.0.0.0/0
+        FromPort: 22
+        IpProtocol: tcp
+        ToPort: 22

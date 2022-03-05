@@ -1,0 +1,17 @@
+Parameters:
+  InstanceType:
+    Description: Ec2 instance taking
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /dev/ec2/instanceType
+
+  ImageId:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Description: image id
+    Default:  /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+
+Resources:
+    MyEc2Instance:
+      Type: AWS::EC2::Instance
+      Properties:
+         InstanceType: !Ref  InstanceType
+         ImageId: !Ref ImageId  
