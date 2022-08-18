@@ -1,0 +1,9 @@
+# it will create new resources and delete the old one because we are changing name of bucket
+
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties: 
+      AccessControl: PublicRead
+      BucketName: "london-2-asd-asd123"
+      

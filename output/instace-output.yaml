@@ -1,0 +1,10 @@
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-0cff7528ff583bf9a"
+      InstanceType: t2.micro
+      SecurityGroups:
+        # we reference the output here, using the Fn::ImportValue function
+        - !ImportValue SSHSecurityGroup

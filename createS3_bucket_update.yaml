@@ -1,0 +1,9 @@
+#Update with no intruption
+  #without distribute resourcces operation and without changing physical ID.
+
+
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties: {
+      AccessControl: PublicRead}

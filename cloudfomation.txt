@@ -1,0 +1,58 @@
+
+What is Parameters
+	Parameter is a way to provide input to your AWS cloudforamtion template
+		Some input can not be determine ahead of time,
+		You want to re-use template 
+		
+		
+When to use parameter ?
+	Ask yourself this question
+		Is cloudformation resources configration change in future ?
+		Then make is paramter
+		
+		
+How to reference a paramter ?
+	The Fn:Ref function can be leveraged to refernec paramter 
+	Paramter can be use anywhere is template
+	Except 
+		AWSTEMPLATEvERSION
+		Description
+		Transform
+		Mapping
+		
+		
+		
+		
+Optional Attribute For resources
+	DependOn
+		Very usefull to draw a dependency between two resources
+		For example, Create ECS cluster after creating ASG
+	DeletionPolicy
+		Protect resources being delete if you delete Stack
+	UpdateReplacePolicy
+		Protect resource being replace during cloudformation replace
+	CreatePolicy
+		
+	UpdatePolicy
+	
+	Metadata
+		
+		
+		
+		
+Mapping 
+	Mapping is fixed varibale , it differentiate between enviourment like dev, prod etc
+	We should use mapping when we know in advance all value like AZ, ami etc
+	
+	
+AccessMapping (Fn::FindInMap)
+	
+	
+	
+	
+Output
+	We can import output value into other stack
+	You can view the output in AWS CLI or AWS console
+	
+
+

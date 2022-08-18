@@ -1,0 +1,23 @@
+#https://www.udemy.com/course/aws-cloudformation-master-class/learn/lecture/26816944#overview 
+Resources:
+  MySG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow 22 port
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 22
+        ToPort: 22
+        CidrIp: 10.0.0.0/24
+      - IpProtocol: tcp
+        FromPort: 22
+        ToPort: 22
+        CidrIp: 0.0.0.0/0
+      
+
+Outputs:
+  SgOutput:
+    Description: Return SG Id
+    Value: !Ref MySG
+    Export:
+      Name: SSHSecurityGroup

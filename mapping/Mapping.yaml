@@ -1,0 +1,25 @@
+# link about Paramter
+#https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
+Parameters:
+  EnviourmentName:
+    Description: Enter name of your enviourment
+    Type: String
+    AllowedValues: [dev, prod]
+    ConstraintDescription: must be development or production
+Mappings:
+  EnviourmentInstanceToType:
+    dev:
+      InstanceType: t2.micro
+    prod:
+      InstanceType: t2.small
+
+#Link about Ec2 instance 
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-0cff7528ff583bf9a"
+      InstanceType: !FindInMap [EnviourmentInstanceToType, !Ref EnviourmentName, InstanceType ]
+      
