@@ -56,3 +56,21 @@ Output
 	
 
 
+Condition:
+	Condition are use to control the creating of resource or output base on Condition
+	Most common area to use condition is 
+		1 Enviourmet (dev, test, prod)
+		2 AWS region
+		3 Any parameter value
+	The intrint function we can use 
+		Fn::And
+		Fn::Equal
+		Fn::If
+		Fn::Not
+		Fn::Or
+![alt text](image.png)
+
+
+	Fn:GetAtt 
+		* attribute that attach to any resources you create
+
