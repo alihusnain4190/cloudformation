@@ -68,7 +68,7 @@ Condition:
 		Fn::If
 		Fn::Not
 		Fn::Or
-![alt text](image.png)
+![alt text]("./img/1.png")
 
 
 	Fn:GetAtt 
