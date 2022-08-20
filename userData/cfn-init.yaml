@@ -1,0 +1,31 @@
+Parameters:
+  InstanceType: 
+    Description: Select which instance you want to launch
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.small
+      - t2.nano
+Resources:
+  MyInstnace:
+    Type: AWS::EC2::Instance
+    Metadata:
+      Comment: install packages
+      AWS::CloudFormation::Init:
+        Config:
+          Packages:
+            yum: 
+              httpd: []
+              php: []
+          groups:
+            apache: {}
+          users:
+            "apache":
+              groups:
+                - "apache"
+          sources:
+            "/home/ec2-user/aws-cli": "https://github.com/aws/aws-cli/tarball/master"
+          
+    Properties:
+      ImageId: "ami-0cff7528ff583bf9a"
+      InstanceType: !Ref InstanceType
