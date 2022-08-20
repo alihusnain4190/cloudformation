@@ -63,11 +63,21 @@ Output
 		2 AWS region
 		3 Any parameter value
 	The intrint function we can use 
+<<<<<<< HEAD
 	 * Fn::And
 	 * 	Fn::Equal
 	 *	Fn::If
 	 *	Fn::Not
 	 *	Fn::Or
+=======
+		Fn::And
+		Fn::Equal
+		Fn::If
+		Fn::Not
+		Fn::Or
+![image]("./img/1.png")
+
+>>>>>>> 75c55d92da39e7977e1da20fa2e78dd8d6087a09
 
 	Fn:GetAtt 
 		* attribute that attach to any resources you create
